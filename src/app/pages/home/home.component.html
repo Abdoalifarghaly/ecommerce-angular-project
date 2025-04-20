@@ -1,0 +1,190 @@
+
+<section>
+   @if (isloading) {
+    <div class="d-flex justify-content-center align-items-center flex-grow-1" style="min-height: 80vh;">
+    <app-spinner></app-spinner>
+  </div>
+   }@else {
+<div class="container">
+    
+    <div class="row">
+   
+      <!-- السلايدر -->
+      
+      <div class="col-12 col-md-5 col-lg-5 text-start">
+        <h5 class="text-secondary">Hot Sales</h5>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="border-radius: 20px; overflow: hidden;">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block rounded-4" src="p1.avif" alt="Tech Image 1" style="width: 100%; height: 250px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block rounded-4" src="p2.avif" alt="Tech Image 2" style="width: 100%; height: 250px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block rounded-4" src="p3.avif" alt="Tech Image 3" style="width: 100%; height: 250px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block rounded-4" src="p4.avif" alt="Tech Image 4" style="width: 100%; height: 250px; object-fit: cover;">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- المنتجات -->
+      <div class="col-lg-5 mb-4 my-5">
+       <div class="row" style="border-right: 1px solid grey; height: 250px;">
+  <!-- منتج 1 -->
+  <div class="col-6 mb-3">
+    <div class="border rounded-4 p-2 shadow-sm d-flex align-items-start gap-2">
+      <img src="p5.jpg" class="rounded-3" alt="Product 1" style="width: 100px; height: 80px; object-fit: cover;">
+      <div>
+        <p class="mb-1 small">Ant Esports GP310 Wireless Gamepad</p>
+        <p class="mb-1 text-success fw-bold ">
+          <del class="text-secondary me-2 ">14</del> <span class="text-success">$</span> <span class="text-black">14</span> 
+        </p>
+            <span class="text-black fw-bold  ms-2"><span style="width: 10px; height: 25px; background-color: red;color: white;border-radius: 10px;font-size: 15px;"> 3%</span> off</span>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- منتج 2 -->
+  <div class="col-6 mb-3">
+    <div class="border rounded-4 p-2 shadow-sm d-flex align-items-start gap-2">
+      <img src="p6.jpg" class="rounded-3" alt="Product 2" style="width: 100px; height: 100px; object-fit: cover;">
+      <div>
+        <p class="mb-1 small">Samsung Galaxy S23 5G (128GB)</p>
+        <p class="mb-1 text-success fw-bold"><del class="text-secondary me-2 ">905</del><span class="text-success">$</span><span class="text-black">715</span></p>
+            <span class="text-black fw-bold  ms-2"><span style="width: 10px; height: 25px; background-color: red;color: white;border-radius: 10px;font-size: 15px;">21%</span> off</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- منتج 3 -->
+  <div class="col-6 mb-3">
+    <div class="border rounded-4 p-2 shadow-sm d-flex align-items-start gap-2">
+      <img src="p7.jpg" class="rounded-3" alt="Product 3" style="width: 100px; height: 100px; object-fit: cover;">
+      <div>
+        <p class="mb-1 small">Sony Srs-Xb13 Wireless Speaker</p>
+        <p class="mb-1 text-success fw-bold"><del class="text-secondary me-2">42</del><span class="text-success">$</span><span class="text-black">42</span></p>
+                    <span class="text-black fw-bold  ms-2"><span style="width: 10px; height: 25px; background-color: red;color: white;border-radius: 10px;font-size: 15px;">3%</span> off</span>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- منتج 4 -->
+  <div class="col-6 mb-3">
+    <div class="border rounded-4 p-2 shadow-sm d-flex align-items-start gap-2">
+      <img src="p8.jpg" class="rounded-3" alt="Product 4" style="width: 100px; height: 100px; object-fit: cover;">
+      <div>
+        <p class="mb-1 small">JBL Go 2 Bluetooth Speaker</p>
+        <p class="mb-1 text-success fw-bold"><del class="text-secondary me-2">24</del> <span class="text-success">$</span><span class="text-black">23</span> </p>
+                          <span class="text-black fw-bold  ms-2"><span style="width: 10px; height: 25px; background-color: red;color: white;border-radius: 10px;font-size: 15px;">4%</span> off</span>
+
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+
+      <!-- أفضل البائعين -->
+      <div class="col-lg-2 my-5 ">
+        <h6 class="text-secondary">BEST SELLERS</h6>
+        <ul class="list-unstyled" style="margin-left: 20px;">
+          <li class="mb-2 d-flex align-items-center">
+<img src="apple.png" alt="Apple" class="me-2" style="width: 30px;">
+  <div class="d-flex flex-column flex-grow-1">
+    <span>Apple</span>
+    <span class="text-muted"  style="width: 40px;height: 25px; border: 1px solid grey; text-align: center; border-radius: 10px;">98%</span>
+  </div>          </li>  
+          <li class="mb-2 d-flex align-items-center">
+<img src="sony.jpeg" alt="Sony" class="me-2" style="width: 30px;">
+  <div class="d-flex flex-column flex-grow-1">
+    <span>Sony</span>
+    <span class="text-muted"  style="width: 40px;height: 25px; border: 1px solid grey; text-align: center; border-radius: 10px;">96%</span>
+  </div>          </li>
+          <li class="mb-2 d-flex align-items-center">
+<img src="xiaomi.png" alt="Apple" class="me-2" style="width: 30px;">
+  <div class="d-flex flex-column flex-grow-1">
+    <span>Xiaomi</span>
+    <span class="text-muted" style="width: 40px;height: 25px; border: 1px solid grey; text-align: center; border-radius: 10px;">92%</span>
+  </div>          </li>
+        </ul>
+      </div>
+   <ul class="d-flex gap-2 nextUl" style="list-style: none;">
+    <li class="btn category-btn "[class.active]="selectedCategory==='All'" (click)="selectedCategory='All'">All</li>
+    <li class="btn category-btn" [class.active]="selectedCategory==='Popular'" (click)="selectedCategory='Popular'">Popular</li>
+    <li class="btn category-btn" [class.active]="selectedCategory==='Cheap'" (click)="selectedCategory='Cheap'">Cheap</li>
+    <li class="btn category-btn" [class.active]="selectedCategory==='Expensive'" (click)="selectedCategory='Expensive'">Expensive</li>
+    <li class="btn category-btn" [class.active]="selectedCategory==='Sale'" (click)="selectedCategory='Sale'">Sale</li>
+   </ul>
+      <!-- <pre>{{ iproduct | json }}</pre> -->
+     @for (p of getPaginatedData() |popular:selectedCategory ; track $index) {
+      
+  <div class="col-lg-2 col-md-4 col-sm-6 mb-4 ">
+   
+    <div class=" h-100 imm" style="width: 100%;">
+      
+      <!-- صورة المنتج بحدود (border) فقط -->
+      <img #image
+        [src]="p.image" 
+        [routerLink]="['/details',p.id]"
+        loading="lazy"
+        class="card-img-top border border-2 rounded" 
+        style="border-color: #007bff;" 
+        alt="..." appScalefoto
+        (error)="image.src='	https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692257709689-logitech%20heaphone.jpg'"
+      >
+
+      <div class="card-body">
+        <h5 class="card-title">{{p.title |new  }}</h5>
+        <del class="text-secondary me-2">{{p.price}}</del>
+        <span class="card-text me-2 fw-bold " style="font-size: 20px;"><span class="text-success">$</span>{{p.price |discountprice:p.discount }}</span>
+        <span  class="me-2"
+          style="width: 25px; height: 25px; background-color: red; color: white; border-radius: 50%; font-size: 13px; display: inline-block; text-align: center;"
+        >{{p.discount || 0 }}%</span>
+        <span>off</span>
+
+      </div>
+
+    </div>
+  </div>
+}
+
+  
+
+    </div>
+      <div class="d-flex justify-content-center mt-4 mb-4">
+        <button
+        style="background-color: orangered; color: white;"
+          class="btn me-2"
+          (click)="previousPage()"
+          [disabled]="currentPage === 1"
+        >
+          Previous
+        </button>
+        <span class="mx-2">Page {{ currentPage }} of {{ totalPages() }}</span>
+        <button
+        style="background-color: orangered; color: white;"
+          class="btn"
+          (click)="nextPage()"
+          [disabled]="currentPage === totalPages()"
+        >
+          Next
+        </button>
+      </div>
+  </div>
+   }
+  
+  
+</section>

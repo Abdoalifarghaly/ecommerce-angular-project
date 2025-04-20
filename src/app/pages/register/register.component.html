@@ -1,0 +1,106 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4 col-sm-12 shadow p-4 rounded" style="background-color: #f8f9fa;">
+      <h1 class="text-center mb-4">Sign Up Now</h1>
+
+      <form [formGroup]="userRegister" (ngSubmit)="submit()" class="mb-5">
+
+        <!-- Full Name -->
+        <div class="form-floating mb-3 position-relative">
+          <input type="text" class="form-control" id="nameInput" placeholder="Name" formControlName="fullName" appAppAutoFocus>
+          <label for="nameInput">Full Name</label>
+
+          @if (fullName?.invalid && (fullName?.dirty || fullName?.touched)) {
+            <div class="mt-2">
+              @if (fullName?.errors?.['required']) {
+                <small class="alert alert-danger d-block">
+                  Full Name is required.
+                </small>
+              }
+              @if (fullName?.errors?.['pattern']) {
+                <small class="alert alert-danger d-block">
+                  Full Name must contain at least 3 alphabetic characters.
+                </small>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Email -->
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="emailInput" placeholder="Email" formControlName="email">
+          <label for="emailInput">Email Address</label>
+
+          @if (email?.invalid && (email?.dirty || email?.touched)) {
+            <div class="mt-2">
+              @if (email?.errors?.['required']) {
+                <small class="alert alert-danger d-block">
+                  Email is required.
+                </small>
+              }
+              @if (email?.errors?.['email']) {
+                <small class="alert alert-danger d-block">
+                  Please enter a valid email address.
+                </small>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Password -->
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="passwordInput" placeholder="Password" formControlName="password">
+          <label for="passwordInput">Password</label>
+
+          @if (password?.invalid && (password?.dirty || password?.touched)) {
+            <div class="mt-2">
+              @if (password?.errors?.['required']) {
+                <small class="alert alert-danger d-block">
+                  Password is required.
+                </small>
+              }
+              @if (password?.errors?.['pattern']) {
+                <small class="alert alert-danger d-block">
+                  Password must include at least one uppercase letter, one lowercase letter, one number, and one special character.
+                </small>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="confirmPasswordInput" placeholder="Confirm Password" formControlName="confirmPassword">
+          <label for="confirmPasswordInput">Confirm Password</label>
+
+          @if ((confirmPassword?.touched && password?.touched) && userRegister.errors?.['unMatchedPass']) {
+            <div class="mt-2">
+              <small class="alert alert-danger d-block">
+                Passwords do not match.
+              </small>
+            </div>
+          }
+        </div>
+
+        <!-- Submit Button with spinner -->
+        <button type="submit" class="btn btn-primary w-100" [disabled]="userRegister.invalid || isLoading">
+          @if (!isLoading) {
+            Sign Up
+          } @else {
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Signing up...
+          }
+        </button>
+      </form>
+
+      <!-- Optional full spinner below form -->
+      @if (isLoading) {
+        <div class="d-flex justify-content-center my-3">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

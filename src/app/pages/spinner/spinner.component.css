@@ -1,0 +1,38 @@
+.loader {
+  width: 100px; /* زيادة الحجم */
+  height: 100px; /* زيادة الحجم */
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 8px solid black; /* زيادة سمك الحد */
+  border-right: 8px solid transparent; /* زيادة سمك الحد */
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  
+  position: fixed; /* ليتوضع في وسط الشاشة */
+  top: 50%; /* لضبطه عموديًا */
+  left: 50%; /* لضبطه أفقيًا */
+  transform: translate(-50%, -50%); /* لتحريكه تمامًا في الوسط */
+}
+
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px; /* زيادة الحجم */
+  height: 100px; /* زيادة الحجم */
+  border-radius: 50%;
+  border-left: 8px solid #FF3D00; /* زيادة سمك الحد */
+  border-bottom: 8px solid transparent; /* زيادة سمك الحد */
+  animation: rotation 0.5s linear infinite reverse;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,15 @@
+.category-btn {
+  background-color: transparent;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.category-btn.active {
+  background-color: black;
+  color: white;
+  border-color: black;
+}

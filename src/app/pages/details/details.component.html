@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    @if (isloading) {
+        <app-spinner></app-spinner>
+    }
+ @else {
+      @if (data && data.image) {
+    <div class="row">
+      <div class="col-md-5">
+        <img [src]="data.image" class="img-fluid rounded" alt="{{data.title}}" #image          (error)="image.src='	https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692257709689-logitech%20heaphone.jpg'"
+>
+      </div>
+      <div class="col-md-7">
+        <h3>{{ data.title }}</h3>
+               <del class="text-secondary me-2"> {{ data.price }}</del><span class="text-success fw-bold" style="font-size: 30px;">$<span class="text-dark me-2">{{data.price |discountprice:data.discount  }}</span></span>
+              
+
+         <span  class="me-2"
+          style="width: 25px; height: 25px; background-color: red; color: white; border-radius: 50%; font-size: 13px; display: inline-block; text-align: center;"
+        >{{data.discount ||0}}%</span>
+        <span>off</span>
+        <p><strong>Brand:</strong> {{ data.brand }}</p>
+        <p><strong>Model:</strong> {{ data.model }}</p>
+        <p><strong>Color:</strong> {{ data.color }}</p>
+        <p><strong>About This Product : <br></strong> {{ data.description }}</p>
+                      <button class="btn " style="background-color: orangered; width: fit-content; font-weight: bold;color: white; margin-bottom: 10px;" (click)="addToCart()"><i class="bi bi-cart-plus-fill me-2"></i>ADD TO CART</button>
+
+      </div>
+    </div>
+  }
+  }
+</div>

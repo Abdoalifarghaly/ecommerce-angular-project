@@ -1,0 +1,39 @@
+/* تأكد من أن الـ body و html يشغلان 100% من ارتفاع الشاشة */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* التأكد من أن المحتوى يأخذ المساحة المتبقية من الصفحة */
+.main-content {
+  flex-grow: 1; /* يأخذ المساحة المتبقية */
+}
+
+/* تصميم footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100%; /* تأكد من أن الفوتر يشغل العرض كاملاً */
+  margin-top: auto; /* يجعل الفوتر يلتصق بأسفل الصفحة */
+}
+
+/* تحسين عرض الأيقونات في footer */
+footer .d-flex a {
+  color: white;
+  font-size: 24px;
+}
+
+/* تحسين تصميم الفوتر للأجهزة المحمولة */
+@media (max-width: 768px) {
+  footer .container {
+    text-align: center;
+  }
+
+  footer .d-flex {
+    justify-content: center;
+  }
+}

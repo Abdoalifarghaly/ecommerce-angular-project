@@ -1,0 +1,123 @@
+<div class="container">
+  <div class="row">
+    <!-- القائمة الجانبية -->
+    <div class="col-12 col-md-3 mb-4">
+      <ul class="list-unstyled category-ul d-flex flex-wrap flex-md-column gap-2 mt-4">
+        <li
+          class="category-btn active btn"
+          [class.active]="selctCategory === 'All'"
+          (click)="selctCategory = 'All'; filterData()"
+        >
+          Electronics
+        </li>
+        <li
+          class="category-btn btn"
+          [class.active]="selctCategory === 'tv'"
+          (click)="selctCategory = 'tv'; filterData()"
+        >
+          Tv
+        </li>
+        <li
+          class="category-btn btn"
+          [class.active]="selctCategory === 'audio'"
+          (click)="selctCategory = 'audio'; filterData()"
+        >
+          Audio
+        </li>
+        <li
+          class="category-btn btn"
+          [class.active]="selctCategory === 'laptop'"
+          (click)="selctCategory = 'laptop'; filterData()"
+        >
+          Laptop
+        </li>
+        <li
+          class="category-btn btn"
+          [class.active]="selctCategory === 'mobile'"
+          (click)="selctCategory = 'mobile'; filterData()"
+        >
+          Mobile
+        </li>
+        <li
+          class="category-btn btn"
+          [class.active]="selctCategory === 'gaming'"
+          (click)="selctCategory = 'gaming'; filterData()"
+        >
+          Gaming
+        </li>
+        <li
+          class="category-btn btn"
+          [class.active]="selctCategory === 'appliances'"
+          (click)="selctCategory = 'appliances'; filterData()"
+        >
+          Appliances
+        </li>
+      </ul>
+    </div>
+
+    <!-- المنتجات -->
+     @if (isloading) {
+        <app-spinner></app-spinner>
+     }@else {
+<div class="col-12 col-md-9">
+      <div class="row">
+        @for (p of getPaginatedData() | category:selctCategory; track $index) {
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="h-100 imm">
+              <img
+                #image
+                [src]="p.image"
+                class="card-img-top border border-2 rounded"
+                style="border-color: #007bff;  height: 250px;"
+                alt="..."
+                appScalefoto
+                loading="lazy"
+                (error)="image.src='https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692257709689-logitech%20heaphone.jpg'"
+                             [routerLink]="['/details',p.id]"
+
+                />
+              <div class="card-body">
+                <h5 class="card-title">{{ p.title | new }}</h5>
+                <del class="text-secondary me-2">{{ p.price }}</del>
+                <span class="card-text me-2 fw-bold" style="font-size: 20px;">
+                  <span class="text-success">$</span>{{ p.price | discountprice:p.discount }}
+                </span>
+                <span
+                  class="me-2"
+                  style="width: 25px; height: 25px; background-color: red; color: white; border-radius: 50%; font-size: 13px; display: inline-block; text-align: center;"
+                >
+                  {{ p.discount ||0 }}%
+                </span>
+                <span>off</span>
+               
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Pagination Controls -->
+      <div class="d-flex justify-content-center mt-4">
+        <button
+        style="background-color: orangered; color: white;"
+          class="btn me-2"
+          (click)="previousPage()"
+          [disabled]="currentPage === 1"
+        >
+          Previous
+        </button>
+        <span class="mx-2">Page {{ currentPage }} of {{ totalPages() }}</span>
+        <button
+        style="background-color: orangered; color: white;"
+          class="btn"
+          (click)="nextPage()"
+          [disabled]="currentPage === totalPages()"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+     }
+    
+  </div>
+</div>

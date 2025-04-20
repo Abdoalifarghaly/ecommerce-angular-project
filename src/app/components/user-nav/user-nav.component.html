@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid d-flex flex-column align-items-start">
+
+    <!-- اللوجو -->
+    <a class="navbar-brand mb-2" href="#" routerLink="/home">
+      <img src="log.svg" alt="logo">
+    </a>
+    <!-- باقي النافبار -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active me-2" aria-current="page" href="#" routerLink="/home">
+            <i class="bi bi-house me-1"></i>Home
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link me-2" href="#" routerLink="/products">
+            <i class="bi bi-inboxes-fill me-1"></i>Products
+          </a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link me-2" href="#" routerLink="/category" routerLinkActive="router-link-active">
+            <i class="bi bi-bookmark me-1"></i>Category
+          </a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 catt">
+        <li class="cart-container mx-3" routerLink="/cart">
+          <img src="cart.svg" class="cart-icon" />
+          <div class="badge btn" >{{cart.getCartCount()}}</div>
+        </li>
+
+        <div class="user-menu" (click)="toggleMenu()">
+          <span class="rounded text-white p-3" style="background-color: orange;">
+            <i class="bi bi-person fs-3"></i> {{userName}}
+          </span>
+          @if (menuOpen) {
+            <div class="menu-dropdown">
+              <button (click)="logout()">Log out <i class="bi bi-box-arrow-right"></i></button>
+            </div>
+          }
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
